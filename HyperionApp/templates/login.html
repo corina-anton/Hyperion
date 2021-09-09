@@ -1,0 +1,43 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+
+  <!-- Login table -->
+  <section class="login">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 col-lg-4 login-section">
+          <h3 class="title">Log in</h3>
+          <form action="">
+            <div class="email-input outline-effect">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <a href="#">Forgotten your username?</a>
+              </div>
+
+              <div class="password-input outline-effect">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Password</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                  <a href="#">Forgotten your password?</a>
+                </div>
+              </div>
+            </form>
+
+            <div class="button-section">
+              <button type="button" class="btn btn-primary login-button">
+                Log in
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="sign-up">
+              <p>Not a member? <a href="#">Sign up free!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+{% endblock %}

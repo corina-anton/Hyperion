@@ -1,0 +1,76 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+
+<!-- Sign up form -->
+<section class="signup-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-4 login-section">
+
+        <h3 class="title">Your details</h3>
+
+        <form action="" method="POST">
+
+          {% csrf_token %}
+
+          <div class="signup-input">
+            <label class="title">Title</label>
+            <select class="form-select form-control outline-effect" aria-label="Default select example" name="title">
+              <option>Select...</option>
+              <option value="1">Mr</option>
+              <option value="2">Mrs</option>
+              <option value="3">Miss</option>
+              <option value="3">Ms</option>
+            </select>
+          </div>
+
+          <div class="signup-input outline-effect">
+            <label class="first-name">First name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="first_name">
+          </div>
+
+          <div class="signup-input outline-effect">
+            <label for="exampleFormControlInput1" class="form-label">Last name(s)</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="last_name">
+          </div>
+
+          <div class="signup-input outline-effect">
+            <label for="exampleFormControlInput1" class="form-label">Date of birth</label>
+            <div class="dob">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="DD" name="dob_day">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="MM" name="dob_month">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="YYYY" name="dob_year">
+            </div>
+          </div>
+
+          <div class="signup-input outline-effect">
+            <label for="exampleFormControlInput1" class="form-label">Email address (this will be your username)</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
+          </div>
+
+          <div class="signup-input outline-effect confirm-email">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+          </div>
+
+          <div class="signup-input outline-effect">
+            <label for="exampleFormControlInput1" class="form-label">Confirm password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" name="confirm_password">
+          </div>
+
+          <div class="button-section outline-effect">
+            <button type="submit" class="btn btn-primary login-button">
+              Sign up
+              <i class="fas fa-arrow-right"></i>
+            </button>
+
+          <p>By continuing to sign up, you agree to Hyperion's <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

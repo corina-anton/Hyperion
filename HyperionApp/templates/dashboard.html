@@ -1,0 +1,66 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+
+<!-- Dashboard -->
+<section class="dashboard-section">
+  <div class="container">
+    <div class="col-12 dashboard">
+
+      <div class="hello">
+        <h2>Hello, <a href="">Marius</a>! Well done, your score is excellent.</h2>
+        <p class="credit-item">Your score means you're all set for competitive credit cards, loans and mortgages.</p>
+      </div>
+
+      <div class="two-columns">
+
+        <div class="col-4 diagram-section">
+          <img src="/static/creditmeter2.jpg" height="430px">
+            <div class="score-text">
+              Your credit score is: <span>899</span>
+              out of 999
+            </div>
+        </div>
+
+        <div class="col-8 credit-explained">
+          <div class="first-section">
+            <h3>About your credit</h3>
+            <p>This is the most recent information as supplied and used by lenders. Note that it could be up to four to six weeks old. Don't recognise this information? Find out <a href="#" class="info">here</a> what you can do. </p>
+
+            <div class="two-containers">
+
+              <div class="col-6 borrowing">
+                <p class="title">Your total borrowing</p>
+                <p>Our records do not show any active credit accounts registered under your name.</p>
+              </div>
+
+              <div class="col-6 offers-section">
+                <div class="offers-item credit-row">
+                  <span><i class="far fa-credit-card"></i>Credit cards (0)</span>
+                  <a class="btn btn-outline-success login-btn small-btn">Details</a>
+                </div>
+
+                <div class="offers-item loans-row">
+                  <span><i class="fas fa-coins"></i>Loans (0)</span>
+                  <a class="btn btn-outline-success login-btn small-btn">Details</a>
+                </div>
+
+                <div class="offers-item mortages-row">
+                  <span><i class="fas fa-home"></i>Mortgages (0)</span>
+                  <a class="btn btn-outline-success login-btn small-btn">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="upgrade">
+            <p>Compare your credit score with other agencies and much more when ypu upgrade to HyperExpert.</p>
+            <a class="btn btn-outline-success login-btn">Start today</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
