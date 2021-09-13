@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import signup_form
 from .forms import login_form
+from django import forms
 from .models import User
-from django.contrib.auth.hashers import make_password, check_password
 
 # Create your views here.
 def index(request):
@@ -66,19 +66,6 @@ def login(request):
         login_instance = login_form(request.POST)
 
         if not login_instance.is_valid():
-            return HttpResponse("error")
-        # Extract the needed data using the `cleaned_data[""]`
-        email = login_instance.cleaned_data['email']
-        password = login_instance.cleaned_data['password']
-
-        # Extract the row in the database whose email = request email.
-        user = User.objects.all().filter(email=email)
-
-        # Verify that the data (usernam/email) is the same with the data in the db
-        if len(user) == 0:
-            return HttpResponse("username or password does not match our records")
-
-        if not check_password(password, user[0].password):
-            return HttpResponse("username or password does not match our records")
+            return render(request, 'login.html', context={'errors': login_instance.errors.values() })
 
         return render(request, 'dashboard.html')

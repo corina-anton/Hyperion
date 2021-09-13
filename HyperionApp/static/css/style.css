@@ -4,6 +4,11 @@
   padding: 0px;
 }
 
+.validationErr ul, .validationErr li {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
 /* Navbar stylesheet */
 .navbar {
   background-color: white;

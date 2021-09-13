@@ -11,6 +11,15 @@
         <div class="row">
           <div class="col-12 col-md-8 col-lg-4 login-section">
             <h3 class="title">Log in</h3>
+
+            {% if errors %}
+            <div class="alert alert-danger validationErr" role="alert">
+              {% for error in errors %}
+                {{ error }}
+              {% endfor %}
+            </div>
+            {% endif %}
+
             <form action="">
               <div class="email-input outline-effect">
                 <div class="mb-3">

@@ -25,12 +25,12 @@
       - `is_valid`
       - `cleaned_data`: It generates a cleaned list where the keys are the parameter names in your form (e.g. email, password) and the value is users' input. In order to use these parameters, you must access them using: `login_instance.cleaned_data['email']`
 
-      NOTE 1:  Forms only get a `cleaned_data` attribute when `is_valid()` has been called.
-      NOTE 2: The `login_instance` is just holds these objects in order for them to be used further.
+  **NOTE 1:**  Forms only get a `cleaned_data` attribute when `is_valid()` has been called.
+  **NOTE 2:** The `login_instance` is just holds these objects in order for them to be used further.
 
 ## Logic workflow
 
-- Basic sign-up page:
+**Basic sign-up page:**
 ![](https://i.imgur.com/lBoipqf.png)
 
     1.  The user fills up the form in the browser. The data is then sent to the server (HTTP, POST method). In order to access this data, you must create an instance of the form (see above);
