@@ -10,3 +10,7 @@ class signup_form(forms.Form):
     email = forms.EmailField(label='Email', max_length=254)
     password = forms.CharField(max_length=254)
     confirm_password = forms.CharField(max_length=254)
+
+class login_form(forms.Form):
+    email= forms.EmailField(label='Email', max_length=254)
+    password = forms.CharField(max_lgth=254)
