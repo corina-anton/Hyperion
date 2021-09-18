@@ -45,7 +45,7 @@
     5. Display success message;
 
 **Basic sign-in page:**
-![](https://imgur.com/a/RB7QPuq)
+![](https://i.imgur.com/3ito5eF.png)
 
     1. The user fills up the login form in the browser. The data is then sent to the server through the HTTP request using the POST method. In order to access the data, you must create an instance of the form;
     2. Input validation: checks if the general conditions set in `forms.py` have been met;
