@@ -35,21 +35,21 @@
 **Basic sign-up page:**
 ![](https://i.imgur.com/lBoipqf.png)
 
-    1.  The user fills up the form in the browser. The data is then sent to the server (HTTP, POST method). In order to access this data, you must create an instance of the form (see above);
-    2. Input validation:
+1. The user fills up the form in the browser. The data is then sent to the server (HTTP, POST method). In order to access this data, you must create an instance of the form (see above);
+2. Input validation:
        - Verify whether the forms conditions have been met;
        - Verify whether the email address already exists. If yes, send error message.
        - Verify whether the password input matches the confirm_password input. If no, send error message. If yes, continue to encryption.
-    3. Password encryption;
-    4. Save users' inputs into the database;
-    5. Display success message;
+3. Password encryption;
+4. Save users' inputs into the database;
+5. Display success message;
 
 **Basic sign-in page:**
 ![](https://i.imgur.com/3ito5eF.png)
 
-    1. The user fills up the login form in the browser. The data is then sent to the server through the HTTP request using the POST method. In order to access the data, you must create an instance of the form;
-    2. Input validation: checks if the general conditions set in `forms.py` have been met;
-    3. Authentication checks:
+1. The user fills up the login form in the browser. The data is then sent to the server through the HTTP request using the POST method. In order to access the data, you must create an instance of the form;
+2. Input validation: checks if the general conditions set in `forms.py` have been met;
+3. Authentication checks:
        - check if the email exists in the database; if no, raise custom error;
        - check if the password matches the one stored in the database; if no, raise custom error;
-    4. Log the user in. This creates a user session;
+4. Log the user in. This creates a user session;
