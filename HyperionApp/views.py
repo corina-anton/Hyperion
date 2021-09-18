@@ -73,4 +73,9 @@ def signin(request):
         return redirect('HyperionApp:dashboard')
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    # Limit access to dashboard if users are not logged-in
+    if request.user.is_authenticated:
+        return render(request, 'dashboard.html')
+
+    else:
+        return redirect('HyperionApp:login')
