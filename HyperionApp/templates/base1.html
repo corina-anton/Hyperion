@@ -49,9 +49,14 @@
             </svg>
           </a>
 
-          <a href="{% url 'HyperionApp:login' %}" class="nav-link active nav-item" href="#">Sign in</a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'HyperionApp:signout' %}" class="nav-link active nav-item" href="#">Log out</a>
 
-          <a href="{% url 'HyperionApp:signup' %}" class="btn btn-outline-success login-btn">Sign up</a>
+            {% else %}
+            <a href="{% url 'HyperionApp:login' %}" class="nav-link active nav-item" href="#">Sign in</a>
+            <a href="{% url 'HyperionApp:signup' %}" class="btn btn-outline-success login-btn">Sign up</a>
+          {% endif %}
+
         </div>
       </div>
     </div>

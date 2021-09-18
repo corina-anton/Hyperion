@@ -5,8 +5,7 @@ from .forms import login_form
 from django import forms
 from .models import User
 from django.contrib.auth.hashers import make_password, check_password
-from django.contrib.auth import authenticate, login
-import json
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def index(request):
@@ -79,3 +78,7 @@ def dashboard(request):
 
     else:
         return redirect('HyperionApp:login')
+
+def signout(request):
+    logout(request)
+    return redirect('HyperionApp:index')
