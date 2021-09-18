@@ -12,6 +12,10 @@ def index(request):
     return render(request, 'index.html')
 
 def signup(request):
+
+    if request.user.is_authenticated:
+        return redirect('HyperionApp:dashboard')
+
     if request.method == 'GET':
         return render(request, 'signup.html')
 
@@ -41,6 +45,10 @@ def signup(request):
 
 
 def signin(request):
+
+    if request.user.is_authenticated:
+        return redirect('HyperionApp:dashboard')
+
     if request.method=='GET':
         return render(request, 'login.html')
 
