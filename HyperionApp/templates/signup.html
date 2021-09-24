@@ -41,7 +41,7 @@
 
           <div class="signup-input outline-effect">
             <label for="exampleFormControlInput1" class="form-label">Last name(s)</label>
-            <input type="text" class="form-control {% if 'last_name' in form.errors %} redborder outline-effect {% endif %}" id="exampleFormControlInput1" name="last_name">
+            <input type="text" class="form-control {% if 'last_name' in form.errors %} redborder {% endif %}" id="exampleFormControlInput1" name="last_name">
 
             {% if 'last_name' in form.errors %}
             <div class="error_message">{{ form.last_name.errors }}</div>
