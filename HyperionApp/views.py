@@ -6,6 +6,7 @@ from django import forms
 from .models import User
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import authenticate, login, logout
+import random
 
 # Create your views here.
 def index(request):
@@ -24,9 +25,10 @@ def signup(request):
         signup_instance = signup_form(request.POST)
 
         if not signup_instance.is_valid():
-            return render(request, 'signup.html', context={'errors': signup_instance.errors.values()})
+            return render(request, 'signup.html', context={ 'form': signup_instance })
 
         else:
+            # Prepare user's inputs to be sent to the db
             title = signup_instance.cleaned_data['title']
             first_name = signup_instance.cleaned_data['first_name']
             last_name = signup_instance.cleaned_data['last_name']
@@ -38,10 +40,14 @@ def signup(request):
 
             encrypted_password = make_password(password)
 
-            add_db = User(title=title, first_name=first_name, last_name=last_name, dob=dob_concatenated, email=email, password=encrypted_password)
+            # Generate random credit score
+            credit_score = random.randint(300, 999)
+
+            # Send credit score and inputs to db
+            add_db = User(title=title, first_name=first_name, last_name=last_name, dob=dob_concatenated, email=email, password=encrypted_password, credit_score=credit_score)
             add_db.save()
 
-            return HttpResponse("thank you")
+            return redirect('HyperionApp:login')
 
 
 def signin(request):

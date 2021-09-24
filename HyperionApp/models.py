@@ -9,6 +9,7 @@ class User(AbstractUser):
     dob = models.CharField(max_length=12)
     email = models.CharField(max_length=254, unique=True)
     password = models.CharField(max_length=50)
+    credit_score = models.IntegerField(max_length=3)
 
     REQUIRED_FIELDS=[]
     # This forces Django to use the email as the username. The username is

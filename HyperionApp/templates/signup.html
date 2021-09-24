@@ -14,14 +14,6 @@
 
           {% csrf_token %}
 
-          {% if errors %}
-          <div class="alert alert-danger" role="alert">
-            {% for error in errors %}
-              {{ error }}
-            {% endfor %}
-          </div>
-          {% endif %}
-
           <div class="signup-input">
             <label class="title">Title</label>
             <select class="form-select form-control outline-effect" aria-label="Default select example" name="title">
@@ -31,16 +23,29 @@
               <option value="3">Miss</option>
               <option value="3">Ms</option>
             </select>
+
+              {% if 'title' in form.errors %}
+              <div class="error_message">{{ form.title.errors }}</div>
+              {% endif %}
+
           </div>
 
           <div class="signup-input outline-effect">
             <label class="first-name">First name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="first_name">
+
+            {% if 'first_name' in form.errors %}
+            <div class="error_message">{{ form.first_name.errors }}</div>
+            {% endif %}
           </div>
 
           <div class="signup-input outline-effect">
             <label for="exampleFormControlInput1" class="form-label">Last name(s)</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="last_name">
+            <input type="text" class="form-control {% if 'last_name' in form.errors %} redborder outline-effect {% endif %}" id="exampleFormControlInput1" name="last_name">
+
+            {% if 'last_name' in form.errors %}
+            <div class="error_message">{{ form.last_name.errors }}</div>
+            {% endif %}
           </div>
 
           <div class="signup-input outline-effect">
@@ -50,21 +55,37 @@
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="MM" name="dob_month">
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="YYYY" name="dob_year">
             </div>
+
+            {% if 'dob_day' in form.errors or 'dob_month' in form.errors or 'dob_year' in form.errors %}
+            <div class="error_message">Date of birth is not valid.</div>
+            {% endif %}
           </div>
 
           <div class="signup-input outline-effect">
             <label for="exampleFormControlInput1" class="form-label">Email address (this will be your username)</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
+
+            {% if 'email' in form.errors %}
+            <div class="error_message">{{ form.email.errors }}</div>
+            {% endif %}
           </div>
 
           <div class="signup-input outline-effect confirm-email">
             <label for="exampleFormControlInput1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+
+            {% if 'password' in form.errors %}
+            <div class="error_message">{{ form.password.errors }}</div>
+            {% endif %}
           </div>
 
           <div class="signup-input outline-effect">
             <label for="exampleFormControlInput1" class="form-label">Confirm password</label>
             <input type="password" class="form-control" id="exampleFormControlInput1" name="confirm_password">
+
+            {% if 'confirm_password' in form.errors %}
+            <div class="error_message">{{ form.confirm_password.errors }}</div>
+            {% endif %}
           </div>
 
           <div class="button-section outline-effect">

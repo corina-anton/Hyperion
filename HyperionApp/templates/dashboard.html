@@ -8,7 +8,21 @@
     <div class="col-12 dashboard">
 
       <div class="hello">
-        <h2>Hello, <a href="">{{ user }}</a>! Well done, your score is excellent.</h2>
+        <h2>Hello, <a href="">{{ user }}</a>!
+
+          {% if user.credit_score < 500 %}
+            Keep going, your score is {{ user.credit_score }}.
+
+          {% elif user.credit_score >= 500 and user.credit_score <= 800 %}
+            You're doing good, your score is {{ user.credit_score }}.
+
+          {% elif user.credit_score > 800 %}
+            You're doing excellent, your score is {{ user.credit_score }}.
+
+          {% endif %}
+
+        </h2>
+
         <p class="credit-item">Your score means you're all set for competitive credit cards, loans and mortgages.</p>
       </div>
 

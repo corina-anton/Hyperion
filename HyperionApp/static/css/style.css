@@ -383,6 +383,9 @@ td h5 {
 }
 
 /* Sign-up stylesheet */
+
+
+
 .signup-section {
   margin-bottom: 100px;
 }
@@ -517,4 +520,20 @@ td h5 {
 .borrowing {
   background: rgba(75, 66, 171, 0.06);
   border-radius: 7px;
+}
+
+/* Overwrite */
+.errorlist li, .error_message {
+  color: red;
+  font-size: 14px;
+  padding-top: 7px;
+  text-align: left;
+  list-style-type: none !important;
+}
+.redborder {
+  border: 0.7px solid red;
+}
+.errorlist {
+  margin: 0px !important;
+  padding-left: 0px;
 }
